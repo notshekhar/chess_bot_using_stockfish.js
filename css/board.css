@@ -8,36 +8,49 @@
 }
 
 /* bottom buttons */
-
+.winning_bar{
+  position: relative;
+  height: 30px;
+  width: 500px;
+  background-color: #21201d; 
+  overflow: hidden;
+}
+.bar{
+  position: absolute;
+  height: 100%;
+  width: 250px;
+  background-color: #f8f8f8;
+  transition: all 1s;
+}
 
 #btn-flip-board {
-  background-image: url('../img/icons/switch-enabled.svg');
+  background-image: url("../img/icons/switch-enabled.svg");
 }
 #btn-flip-board.disabled {
-  background-image: url('../img/icons/switch-disabled.svg');
+  background-image: url("../img/icons/switch-disabled.svg");
 }
 
 #btn-switch-sides {
-  background-image: url('../img/icons/switch-sides.svg');
+  background-image: url("../img/icons/switch-sides.svg");
 }
 
 #btn-save-pgn {
-  background-image: url('../img/icons/save-pgn-enabled.svg');
+  background-image: url("../img/icons/save-pgn-enabled.svg");
 }
 #btn-save-pgn:hover {
 }
 #btn-save-pgn.disabled {
-  background-image: url('../img/icons/save-pgn-disabled.svg');
+  background-image: url("../img/icons/save-pgn-disabled.svg");
 }
 
 #btn-show-hint .icon {
-  background-image: url('../img/icons/hint-enabled.svg');
+  background-image: url("../img/icons/hint-enabled.svg");
 }
 #btn-show-hint.disabled .icon {
-  background-image: url('../img/icons/hint-disabled.svg');
+  background-image: url("../img/icons/hint-disabled.svg");
 }
 #btn-show-hint.loading .icon {
-  background-image: url('../img/icons/loading.svg');
+  background-image: url("../img/icons/loading.svg");
   animation: spin 5s linear infinite;
 }
 
@@ -46,32 +59,32 @@
 }
 
 #btn-take-back {
-  background-image: url('../img/icons/takeback-enabled.svg');
+  background-image: url("../img/icons/takeback-enabled.svg");
 }
 #btn-take-back.disabled {
-  background-image: url('../img/icons/takeback-disabled.svg');
+  background-image: url("../img/icons/takeback-disabled.svg");
 }
 
 /* side buttons */
 
 #btn-analyze .icon {
-  background-image: url('../img/icons/analyze.svg');
+  background-image: url("../img/icons/analyze.svg");
 }
 #btn-analyze.loading .icon {
-  background-image: url('../img/icons/loading.svg');
+  background-image: url("../img/icons/loading.svg");
   animation: spin 5s linear infinite;
 }
 
 #btn-new-game .icon {
-  background-image: url('../img/icons/new-game.svg');
+  background-image: url("../img/icons/new-game.svg");
 }
 
 #btn-resign {
-  background-image: url('../img/icons/resign.svg');
+  background-image: url("../img/icons/resign.svg");
 }
 
 #btn-settings {
-  background-image: url('../img/icons/settings.svg');
+  background-image: url("../img/icons/settings.svg");
 }
 
 /* main styles */
@@ -267,7 +280,7 @@
   top: 5px;
   background-color: silver;
   border-radius: 100%;
-  background-image: url('../img/icons/close.svg');
+  background-image: url("../img/icons/close.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
@@ -289,6 +302,7 @@
   align-items: center;
   -webkit-align-items: center;
   background-color: #21201d;
+  margin-top: 40px;
 }
 .chess-area .board-settings .apex {
   box-sizing: border-box;
@@ -370,7 +384,7 @@
   background-size: 40%;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/close.svg');
+  background-image: url("../img/icons/close.svg");
 }
 .chess-area .board-settings .game-difficulty .close:hover {
   cursor: pointer;
@@ -441,7 +455,7 @@
 
 .chess-area .board-settings .turns-history ol li:before {
   display: block;
-  content: '';
+  content: "";
   position: absolute;
   height: 100%;
   width: 25px;
@@ -519,10 +533,10 @@
   cursor: default;
 }
 .chess-area .board-settings .game-menu .game-black-side {
-  background-image: url('../img/icons/choose-black.svg');
+  background-image: url("../img/icons/choose-black.svg");
 }
 .chess-area .board-settings .game-menu .game-white-side {
-  background-image: url('../img/icons/choose-white.svg');
+  background-image: url("../img/icons/choose-white.svg");
 }
 .chess-area .board-settings .tunes {
   width: 100%;
@@ -722,7 +736,7 @@
     -webkit-flex-direction: column;
     width: auto;
   }
-
+  
   .chess-area .board-table {
     display: flex;
     display: -webkit-flex;
@@ -733,22 +747,22 @@
     align-items: center;
     -webkit-align-items: center;
   }
-
+  
   .chess-area .board-settings {
     max-width: 450px;
     margin: 20px 0 30px 0;
     padding: 2px;
   }
-
+  
   .chess-area .board-settings .buttons {
     align-items: center;
     -webkit-align-items: center;
   }
-
+  
   .chess-area .board-table .controls .messages {
     width: 100%;
   }
-
+  
   .chess-area .board-table .controls .status {
     display: flex;
     align-items: center;

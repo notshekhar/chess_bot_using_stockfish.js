@@ -6,7 +6,6 @@ const remove_highlights = function () {
 }
 
 const highlight_move = function (from, to) {
-    console.error(from, to)
     let fromSquare = document.querySelector(".square-" + from)
     let toSqure = document.querySelector(".square-" + to)
 

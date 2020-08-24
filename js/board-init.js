@@ -17,11 +17,11 @@ var board, // chess board obj
     stateAnalyze = false, // flag if game in analyze state
     stateAnalyzeMatch = "",
     stateHint = false,
-    gameEnd = false // flag for stall, checkmate, etc
-
+    gameEnd = false, // flag for stall, checkmate, etc
+    bar = $(".bar")
 // Init engine
 
-var stockfish = new Worker("js/stockfish.js")
+var stockfish = new Worker("./js/stockfish.js")
 
 function dumpLog(data) {
     if (!data) {
@@ -33,6 +33,9 @@ function dumpLog(data) {
 
 function listMoves() {
     var movesArray = game.history()
+
+    stockfish.postMessage("eval")
+
     if (movesArray[movesArray.length - 1][1] == "x") {
         sound["capture"].play()
     } else {
@@ -68,15 +71,13 @@ function listMoves() {
         .off()
         .click(function () {
             var turnN = parseInt($(this).attr("turn"))
-            console.log("History: show turn " + $(this).attr("turn"))
             moves = JSON.parse(localStorage.getItem("boardHistory"))
-            console.log(moves[turnN - 1])
             loadBoard(moves[turnN - 1], true)
         })
 }
 
 function calcFieldNum(fieldCode) {
-    let letters = ["a", "b", "c", "d", "e", "f", "g", "h"]
+    var letters = ["a", "b", "c", "d", "e", "f", "g", "h"]
     var j = 0
     var num = 0
 
@@ -109,7 +110,13 @@ function calcFieldNum(fieldCode) {
 stockfish.onmessage = function (event) {
     /* dumpLog(event.data); */
     var eventStr = event.data
-    console.log(event.data)
+
+    var match = eventStr.match(/^Total evaluation: (\-?\d\d?.\d\d\d?)/)
+    if (match) {
+        let eval = parseFloat(match[1])
+        let width = 250 + 25 * eval
+        bar.css({ width: `${width}px` })
+    }
 
     if (stateHint == "grep") {
         var match = eventStr.match(
@@ -191,6 +198,7 @@ stockfish.onmessage = function (event) {
 
         if (match) {
             console.log("Match and move.")
+            console.log(eventStr)
             stopTimer()
 
             remove_highlights()
@@ -218,4 +226,3 @@ stockfish.onmessage = function (event) {
         }
     }
 }
-

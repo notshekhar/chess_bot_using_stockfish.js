@@ -255,12 +255,12 @@ function postEndGame() {
     gameEnd = true
     document.getElementById("btn-switch-sides").disabled = true
     $("#btn-switch-sides").addClass("disabled")
-    
+
     document.getElementById("btn-show-hint").disabled = true
     $("#btn-show-hint").addClass("disabled")
-    
+
     $("#game-turn").addClass("hidden")
     sound["gameEnd"].play()
-    
+
     return
 }
