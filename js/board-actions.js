@@ -46,7 +46,7 @@ function loadBoard(fen, fromHistory = false) {
         alert(
             "Error " + gameValidation.error_number + ": " + gameValidation.error
         )
-        return
+        return false
     }
 
     if (fromHistory) {

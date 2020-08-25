@@ -108,6 +108,27 @@
                             >
                                 <i class="icon"></i>
                             </button>
+                            <button
+                                id="btn-load-board"
+                                title="load custom board"
+                            >
+                                <i class="icon"></i>
+                            </button>
+                            <div class="load_fen">
+                                <div class="close_load_fen">
+                                    <i class="icon"></i>
+                                </div>
+                                <div class="load_fen_wrap">
+                                    <input
+                                        type="text"
+                                        placeholder="Enter FEN String"
+                                        class="fen_input"
+                                    />
+                                    <button id="btn-to-load-fen">
+                                        Load Board
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         <div class="status">
                             <!-- <span id="game-timer" class="hidden">00:00</span> -->
@@ -133,7 +154,7 @@
                         >
                             <span class="label">Level</span>
                             <span class="value" id="game-difficulty-skill-value"
-                                >10</span
+                                >14</span
                             >
                         </div>
                     </div>
@@ -153,11 +174,11 @@
                             <span class="7">7</span>
                             <span class="8">8</span>
                             <span class="9">9</span>
-                            <span class="10 selected">10</span>
+                            <span class="10">10</span>
                             <span class="11">11</span>
                             <span class="12">12</span>
                             <span class="13">13</span>
-                            <span class="14">14</span>
+                            <span class="14 selected">14</span>
                             <span class="15">15</span>
                             <span class="16">16</span>
                             <span class="17">17</span>
@@ -190,7 +211,7 @@
                             title="Start New Game"
                             class="btn-new-game"
                         >
-                            <span class="icon"></span>
+                            <!-- <span class="icon"></span> -->
                             <span class="label">New Game</span>
                         </span>
                         <span
@@ -237,7 +258,7 @@
         </div>
 
         <script src="./js/jquery-3.4.1.min.js"></script>
-        <script src="./js/chess.min.js"></script>
+        <script src="./js/chess.js"></script>
         <script src="./js/ltpgnviewer.js"></script>
         <script src="./js/sounds.js"></script>
 
@@ -326,6 +347,6 @@
                 }
             }
         </script>
-        <script src="./js/move_highligh.js"></script>
+        <script src="./js/board-move-highlight.js"></script>
     </body>
 </html>
