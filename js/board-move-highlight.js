@@ -8,7 +8,7 @@ const remove_highlights = function () {
 const highlight_move = function (from, to) {
     let fromSquare = document.querySelector(".square-" + from)
     let toSqure = document.querySelector(".square-" + to)
-
+    if (from == "offboard" || to == "offboard") return
     if (fromSquare.classList.contains("white-1e1d7"))
         fromSquare.classList.add("highlightW")
     else fromSquare.classList.add("highlightB")

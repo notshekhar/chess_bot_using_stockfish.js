@@ -110,7 +110,7 @@ function calcFieldNum(fieldCode) {
 stockfish.onmessage = function (event) {
     /* dumpLog(event.data); */
     var eventStr = event.data
-    // console.log(eventStr)
+    // console.log(eventStr) 
     var match = eventStr.match(/^Total evaluation: (\-?\d\d?.\d\d\d?)/)
     if (match) {
         let eval = parseFloat(match[1])
