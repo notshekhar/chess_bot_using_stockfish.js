@@ -43,6 +43,7 @@ It is a web graphical user interface (GUI) for the Stockfish Chess engine. It is
 ## Basic Suggested Improvements
 
 - [x] Adding an option to set FEN.
+- [x] Adding sound for move, check, and gameEnd(checkmate)
 - [ ] Adding an alternative option to move the pieces by clicking and pointing.
 - [x] Adding a visual evaluation meter to show the player what is the engine's evaluation of the current position.
 
